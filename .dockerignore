@@ -1,0 +1,10 @@
+*.coverage
+tmp/*
+*.cfg
+README.md
+.git
+data/*
+.venv/*
+*checkpoints*
+.Trash*
+artifacts/*
