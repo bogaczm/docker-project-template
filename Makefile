@@ -1,5 +1,5 @@
 #!make
-include docker/variables.env
+include workspace/variables.env
 export
 
 SHELL = bash
@@ -17,7 +17,7 @@ env:
 	echo "HOST_GID=$(HOST_GID)" >> docker/.env
 	echo "HOST_UID=$(HOST_UID)" >> docker/.env
 	
-	cat docker/variables.env >> docker/.env
+	cat workspace/variables.env >> docker/.env
 
 build:
 	make env && docker-compose -f docker/docker-compose.yml -p $(CONTAINER_PREFIX) build
@@ -33,6 +33,9 @@ shell:
 
 notebook:
 	- docker exec -it ${CONTAINER_PREFIX} /bin/sh -c "/entrypoint.sh notebook"
+
+dependencies:
+	chmod +x ./workspace/install.sh && bash workspace/install.sh
 
 config: FORCE
 	make env && docker-compose -f docker/datascience/docker-compose.yml config

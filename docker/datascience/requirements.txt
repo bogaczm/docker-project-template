@@ -1,7 +1,9 @@
 ipython
 jupyter
 jupyterlab
-pylint==2.9.5
+streamlit
+fastapi
+uvicorn
 coverage==5.5
 tqdm==4.62.*
 numpy==1.22
