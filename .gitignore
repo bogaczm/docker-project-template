@@ -124,6 +124,4 @@ venv.bak/
 *.xls
 cifs/
 
-# tmp minio
-tmp/minio/.minio.sys/*
-tmp/minio/work-buddey-emis-etl/*
+
